@@ -1,7 +1,11 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
     { href: "/", label: "Home" },
@@ -12,59 +16,119 @@ const links = [
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const pathname = usePathname();
+
+    // Add subtle background intensity on scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-dark-900/80 backdrop-blur-xl">
-            <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition">
-                        <Sparkles className="w-4 h-4 text-accent-light" />
+        <nav
+            className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
+                ? "bg-[#070b14]/80 backdrop-blur-2xl border-b border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.4)]"
+                : "bg-transparent"
+                }`}
+        >
+            <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+                {/* Logo */}
+                <Link href="/" className="flex items-center group">
+                    <div className="relative h-30 w-64">
+                        <Image
+                            src="/logos/synergy-logo.png"
+                            alt="Synergy AI Logo"
+                            fill
+                            priority
+                            className="object-contain transition-transform duration-300 group-hover:scale-105"
+                        />
                     </div>
-                    <span className="text-lg font-bold tracking-tight">
-                        Synergy<span className="text-gradient"> AI</span>
-                    </span>
                 </Link>
 
-                {/* Desktop */}
-                <div className="hidden md:flex items-center gap-8">
-                    {links.map((l) => (
-                        <Link
-                            key={l.href}
-                            href={l.href}
-                            className="text-sm text-slate-400 hover:text-white transition-colors"
-                        >
-                            {l.label}
-                        </Link>
-                    ))}
+                {/* Desktop Links */}
+                <div className="hidden md:flex items-center gap-10">
+                    {links.map((link) => {
+                        const active = pathname === link.href;
+
+                        return (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className="relative text-sm font-medium tracking-wide transition-colors duration-300"
+                            >
+                                <span
+                                    className={`${active ? "text-white" : "text-slate-400"
+                                        } hover:text-white`}
+                                >
+                                    {link.label}
+                                </span>
+
+                                {/* Animated underline */}
+                                <span
+                                    className={`absolute left-0 -bottom-2 h-[2px] w-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 transition-transform duration-300 origin-left ${active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                                        }`}
+                                />
+                            </Link>
+                        );
+                    })}
+
+                    {/* Premium CTA */}
                     <Link
-                        href="/contact"
-                        className="px-4 py-2 text-sm font-medium rounded-lg bg-accent hover:bg-accent-dark transition text-white"
+                        href="/book"
+                        className="relative px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-500 text-white text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_60px_rgba(99,102,241,0.5)]"
                     >
                         Get Started
                     </Link>
                 </div>
 
-                {/* Mobile toggle */}
-                <button onClick={() => setOpen(!open)} className="md:hidden text-slate-400">
-                    {open ? <X size={24} /> : <Menu size={24} />}
+                {/* Mobile Toggle */}
+                <button
+                    onClick={() => setOpen(!open)}
+                    className="md:hidden text-white"
+                >
+                    {open ? <X size={26} /> : <Menu size={26} />}
                 </button>
             </div>
 
-            {/* Mobile menu */}
-            {open && (
-                <div className="md:hidden border-t border-white/5 bg-dark-900/95 backdrop-blur-xl px-6 py-4 space-y-3">
-                    {links.map((l) => (
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {open && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="md:hidden bg-[#070b14]/95 backdrop-blur-2xl border-t border-white/10 px-6 py-8 space-y-6"
+                    >
+                        {links.map((link) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                onClick={() => setOpen(false)}
+                                className={`block text-lg font-medium ${pathname === link.href
+                                    ? "text-white"
+                                    : "text-slate-400 hover:text-white"
+                                    } transition`}
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+
                         <Link
-                            key={l.href}
-                            href={l.href}
+                            href="/book"
                             onClick={() => setOpen(false)}
-                            className="block text-sm text-slate-400 hover:text-white py-2"
+                            className="block text-center mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-500 text-white font-semibold"
                         >
-                            {l.label}
+                            Get Started
                         </Link>
-                    ))}
-                </div>
-            )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 }
