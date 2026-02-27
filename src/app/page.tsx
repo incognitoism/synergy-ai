@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <LogoCarousel />
+      {/* <LogoCarousel /> */}
       <Offerings />
       <AsphaltShowcase />
       <SynergyCloud />
