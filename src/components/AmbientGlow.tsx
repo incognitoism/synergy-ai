@@ -109,11 +109,14 @@ export default function AmbientGlow() {
                 {dimensions.w > 0 &&
                     waves.map((wave, i) => {
                         const base = i * 3;
+
                         return (
                             <g key={i}>
                                 {/* Outer atmospheric glow */}
                                 <path
-                                    ref={(el) => (pathsRef.current[base] = el)}
+                                    ref={(el) => {
+                                        pathsRef.current[base] = el;
+                                    }}
                                     fill="none"
                                     stroke={wave.color}
                                     strokeWidth={65}
@@ -123,7 +126,9 @@ export default function AmbientGlow() {
 
                                 {/* Mid glow */}
                                 <path
-                                    ref={(el) => (pathsRef.current[base + 1] = el)}
+                                    ref={(el) => {
+                                        pathsRef.current[base + 1] = el;
+                                    }}
                                     fill="none"
                                     stroke={wave.color}
                                     strokeWidth={26}
@@ -133,7 +138,9 @@ export default function AmbientGlow() {
 
                                 {/* Core line */}
                                 <path
-                                    ref={(el) => (pathsRef.current[base + 2] = el)}
+                                    ref={(el) => {
+                                        pathsRef.current[base + 2] = el;
+                                    }}
                                     fill="none"
                                     stroke={wave.color}
                                     strokeWidth={7}
