@@ -118,7 +118,7 @@ export default function ContactPage() {
                             label="Work Email *"
                             type="email"
                             value={form.email}
-                            onChange={(v) => setForm({ ...form, email: v })}
+                            onChange={(v: string) => setForm({ ...form, email: v })}
                             required
                         />
                     </div>
@@ -126,13 +126,13 @@ export default function ContactPage() {
                     <InputField
                         label="Company"
                         value={form.company}
-                        onChange={(v) => setForm({ ...form, company: v })}
+                        onChange={(v: string) => setForm({ ...form, company: v })}
                     />
 
                     <SelectField
                         label="Primary Focus Area"
                         value={form.service_interest}
-                        onChange={(v) => setForm({ ...form, service_interest: v })}
+                        onChange={(v: string) => setForm({ ...form, service_interest: v })}
                         options={[
                             "Enterprise AI Assistants",
                             "Workflow Orchestration",
@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <SelectField
                         label="Estimated Budget Range"
                         value={form.budget}
-                        onChange={(v) => setForm({ ...form, budget: v })}
+                        onChange={(v: string) => setForm({ ...form, budget: v })}
                         options={[
                             "$5k – $15k",
                             "$15k – $50k",
@@ -157,7 +157,7 @@ export default function ContactPage() {
                     <TextAreaField
                         label="Project Overview *"
                         value={form.message}
-                        onChange={(v) => setForm({ ...form, message: v })}
+                        onChange={(v: string) => setForm({ ...form, message: v })}
                         required
                         placeholder="Describe your current systems, bottlenecks, and what success would look like."
                     />
@@ -182,7 +182,15 @@ export default function ContactPage() {
     );
 }
 
-/* ---------- Reusable Fields ---------- */
+/* ---------- Reusable Fields with Strict TS Interfaces ---------- */
+
+interface InputFieldProps {
+    label: string;
+    value: string;
+    onChange: (v: string) => void;
+    required?: boolean;
+    type?: string;
+}
 
 function InputField({
     label,
@@ -190,7 +198,7 @@ function InputField({
     onChange,
     required = false,
     type = "text",
-}: any) {
+}: InputFieldProps) {
     return (
         <div>
             <label className="block text-sm text-slate-400 mb-2">
@@ -207,7 +215,14 @@ function InputField({
     );
 }
 
-function SelectField({ label, value, onChange, options }: any) {
+interface SelectFieldProps {
+    label: string;
+    value: string;
+    onChange: (v: string) => void;
+    options: string[];
+}
+
+function SelectField({ label, value, onChange, options }: SelectFieldProps) {
     return (
         <div>
             <label className="block text-sm text-slate-400 mb-2">
@@ -229,13 +244,21 @@ function SelectField({ label, value, onChange, options }: any) {
     );
 }
 
+interface TextAreaFieldProps {
+    label: string;
+    value: string;
+    onChange: (v: string) => void;
+    required?: boolean;
+    placeholder?: string;
+}
+
 function TextAreaField({
     label,
     value,
     onChange,
     required = false,
     placeholder = "",
-}: any) {
+}: TextAreaFieldProps) {
     return (
         <div>
             <label className="block text-sm text-slate-400 mb-2">

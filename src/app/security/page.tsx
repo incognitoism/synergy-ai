@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+// Added 'Variants' to the import
+import { motion, Variants } from "framer-motion";
 import {
     ShieldCheck,
     Lock,
@@ -16,12 +17,14 @@ import {
 } from "lucide-react";
 
 export default function SecurityPage() {
-    const fadeUp = {
+    // Strongly typed as Variants and added 'as const' to the ease array
+    const fadeUp: Variants = {
         hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const } }
     };
 
-    const stagger = {
+    // Strongly typed as Variants
+    const stagger: Variants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
     };
