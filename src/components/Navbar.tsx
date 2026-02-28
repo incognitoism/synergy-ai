@@ -79,10 +79,10 @@ export default function Navbar() {
 
                     {/* Premium CTA */}
                     <Link
-                        href="/book"
+                        href="/access"
                         className="relative px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-500 text-white text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_60px_rgba(99,102,241,0.5)]"
                     >
-                        Get Started
+                        Login
                     </Link>
                 </div>
 
@@ -124,7 +124,7 @@ export default function Navbar() {
                             onClick={() => setOpen(false)}
                             className="block text-center mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-500 text-white font-semibold"
                         >
-                            Get Started
+                            Book a Call
                         </Link>
                     </motion.div>
                 )}
