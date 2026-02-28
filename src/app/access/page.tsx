@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+// 1. Import 'Variants' from framer-motion
+import { motion, Variants } from "framer-motion";
 import {
     ArrowUpRight,
     Fingerprint,
@@ -11,17 +12,18 @@ import {
 } from "lucide-react";
 
 export default function AccessPage() {
-    // Ultra-lightweight animations (removed CPU-heavy blur animations)
-    const fadeUp = {
+    // 2. Explicitly type as Variants and add 'as const' to the ease array
+    const fadeUp: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
+            transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }
         }
     };
 
-    const staggerContainer = {
+    // 3. Explicitly type this as Variants as well
+    const staggerContainer: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
