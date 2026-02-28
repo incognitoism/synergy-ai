@@ -110,7 +110,7 @@ export default function ContactPage() {
                         <InputField
                             label="Full Name *"
                             value={form.name}
-                            onChange={(v) => setForm({ ...form, name: v })}
+                            onChange={(v: string) => setForm({ ...form, name: v })}
                             required
                         />
 
