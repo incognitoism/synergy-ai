@@ -800,8 +800,7 @@ export default function AutomationPage() {
                                         background: "rgba(255,255,255,0.015)",
                                         borderColor: "rgba(255,255,255,0.04)",
                                     }}>
-                                    <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300
-                                        group-hover:bg-indigo-500/15 group-hover:border-indigo-500/25"
+                                    <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-indigo-500/15 group-hover:border-indigo-500/25"
                                         style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)" }}>
                                         <f.Icon size={18} strokeWidth={1.5} className="group-hover:text-indigo-400 transition-colors duration-300" />
                                     </div>

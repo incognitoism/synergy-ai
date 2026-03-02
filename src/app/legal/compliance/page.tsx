@@ -32,10 +32,7 @@ export default function CompliancePage() {
             <section className="relative border-b border-white/[0.06] overflow-hidden">
 
                 {/* Subtle grid background */}
-                <div className="absolute inset-0 opacity-[0.04] pointer-events-none 
-          bg-[linear-gradient(to_right,#4f46e51a_1px,transparent_1px),
-              linear-gradient(to_bottom,#4f46e51a_1px,transparent_1px)]
-          bg-[size:72px_72px]" />
+                <div className="absolute inset-0 opacity-[0.04] pointer-events-none  bg-[linear-gradient(to_right,#4f46e51a_1px,transparent_1px), linear-gradient(to_bottom,#4f46e51a_1px,transparent_1px)] bg-[size:72px_72px]" />
 
                 <div className="relative max-w-6xl mx-auto px-8 md:px-16 py-28">
 
@@ -54,8 +51,7 @@ export default function CompliancePage() {
 
                         <motion.h1
                             variants={fadeUp}
-                            className="mt-6 text-5xl md:text-6xl font-medium tracking-[-0.04em] leading-[0.95]
-              text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40"
+                            className="mt-6 text-5xl md:text-6xl font-medium tracking-[-0.04em] leading-[0.95] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40"
                         >
                             Compliance Framework
                         </motion.h1>
@@ -86,8 +82,7 @@ export default function CompliancePage() {
                         variants={fadeUp}
                         whileHover={{ y: -4 }}
                         transition={{ type: "spring", stiffness: 320, damping: 28 }}
-                        className="rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.02]
-            border border-white/[0.06] p-8"
+                        className="rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.02] border border-white/[0.06] p-8"
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
@@ -108,8 +103,7 @@ export default function CompliancePage() {
                         variants={fadeUp}
                         whileHover={{ y: -4 }}
                         transition={{ type: "spring", stiffness: 320, damping: 28 }}
-                        className="rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.02]
-            border border-white/[0.06] p-8"
+                        className="rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.02] border border-white/[0.06] p-8"
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
@@ -130,8 +124,7 @@ export default function CompliancePage() {
                         variants={fadeUp}
                         whileHover={{ y: -4 }}
                         transition={{ type: "spring", stiffness: 320, damping: 28 }}
-                        className="rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.02]
-            border border-white/[0.06] p-8"
+                        className="rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.02] border border-white/[0.06] p-8"
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
@@ -152,8 +145,7 @@ export default function CompliancePage() {
                         variants={fadeUp}
                         whileHover={{ y: -4 }}
                         transition={{ type: "spring", stiffness: 320, damping: 28 }}
-                        className="rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.02]
-            border border-white/[0.06] p-8"
+                        className="rounded-2xl bg-gradient-to-b from-white/[0.04] to-white/[0.02] border border-white/[0.06] p-8"
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">

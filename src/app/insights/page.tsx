@@ -852,8 +852,7 @@ export default function PredictiveAnalysisPage() {
                                 <motion.div key={i} variants={staggerChild}
                                     className="group p-6 rounded-2xl border transition-all duration-500 hover:border-white/[0.12]"
                                     style={{ background: "rgba(255,255,255,0.015)", borderColor: "rgba(255,255,255,0.04)" }}>
-                                    <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300
-                                        group-hover:bg-cyan-500/15 group-hover:border-cyan-500/25"
+                                    <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-cyan-500/15 group-hover:border-cyan-500/25"
                                         style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)" }}>
                                         <f.Icon size={18} strokeWidth={1.5} className="group-hover:text-cyan-400 transition-colors duration-300" />
                                     </div>

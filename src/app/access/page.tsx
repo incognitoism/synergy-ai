@@ -35,18 +35,13 @@ export default function AccessPage() {
             <div className="relative w-full lg:w-[55%] flex flex-col justify-center px-10 lg:px-24 py-20 overflow-hidden border-b lg:border-b-0 lg:border-r border-white/[0.06] bg-[#030108]">
 
                 {/* Subtle grid */}
-                <div className="absolute inset-0 opacity-[0.04] pointer-events-none 
-                    bg-[linear-gradient(to_right,#4f46e51a_1px,transparent_1px),
-                        linear-gradient(to_bottom,#4f46e51a_1px,transparent_1px)]
-                    bg-[size:72px_72px]" />
+                <div className="absolute inset-0 opacity-[0.04] pointer-events-none  bg-[linear-gradient(to_right,#4f46e51a_1px,transparent_1px), linear-gradient(to_bottom,#4f46e51a_1px,transparent_1px)] bg-[size:72px_72px]" />
 
                 {/* Ambient glow */}
                 <motion.div
                     animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-40 -left-40 w-[600px] h-[600px] 
-                        bg-[radial-gradient(circle,rgba(79,70,229,0.08)_0%,transparent_65%)]
-                        pointer-events-none"
+                    className="absolute -top-40 -left-40 w-[600px] h-[600px]  bg-[radial-gradient(circle,rgba(79,70,229,0.08)_0%,transparent_65%)] pointer-events-none"
                 />
 
                 <motion.div
@@ -64,8 +59,7 @@ export default function AccessPage() {
 
                     <motion.h1
                         variants={fadeUp}
-                        className="text-6xl md:text-7xl lg:text-8xl font-medium tracking-[-0.04em] leading-[0.95]
-                        text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40"
+                        className="text-6xl md:text-7xl lg:text-8xl font-medium tracking-[-0.04em] leading-[0.95] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40"
                     >
                         Make something
                         <br />
@@ -122,12 +116,7 @@ export default function AccessPage() {
                     >
                         <Link
                             href="/signin"
-                            className="group flex items-center justify-between gap-6 rounded-2xl
-                            bg-gradient-to-b from-white/[0.05] to-white/[0.02]
-                            border border-white/[0.08]
-                            p-6 transition-all duration-300
-                            hover:border-indigo-500/40
-                            hover:shadow-[0_0_40px_rgba(79,70,229,0.08)]"
+                            className="group flex items-center justify-between gap-6 rounded-2xl bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-6 transition-all duration-300 hover:border-indigo-500/40 hover:shadow-[0_0_40px_rgba(79,70,229,0.08)]"
                         >
                             <div className="flex items-center gap-5">
                                 <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 group-hover:bg-indigo-500/20 transition-all duration-300">
@@ -160,12 +149,7 @@ export default function AccessPage() {
                     >
                         <Link
                             href="/signup"
-                            className="group flex items-center justify-between gap-6 rounded-2xl
-                            bg-gradient-to-b from-white/[0.05] to-white/[0.02]
-                            border border-white/[0.08]
-                            p-6 transition-all duration-300
-                            hover:border-purple-500/40
-                            hover:shadow-[0_0_40px_rgba(192,38,211,0.08)]"
+                            className="group flex items-center justify-between gap-6 rounded-2xl bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-6 transition-all duration-300 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(192,38,211,0.08)]"
                         >
                             <div className="flex items-center gap-5">
                                 <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover:bg-purple-500/20 transition-all duration-300">
@@ -193,9 +177,7 @@ export default function AccessPage() {
                     <motion.div variants={fadeUp} whileHover={{ y: -3 }}>
                         <Link
                             href="/documentation"
-                            className="group flex flex-col justify-between h-[160px] rounded-2xl
-                            bg-white/[0.04] border border-white/[0.08] p-6
-                            hover:border-white/[0.15] transition-all duration-300"
+                            className="group flex flex-col justify-between h-[160px] rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6 hover:border-white/[0.15] transition-all duration-300"
                         >
                             <BookOpen
                                 size={20}
@@ -217,9 +199,7 @@ export default function AccessPage() {
                     <motion.div variants={fadeUp} whileHover={{ y: -3 }}>
                         <Link
                             href="/security"
-                            className="group flex flex-col justify-between h-[160px] rounded-2xl
-                            bg-white/[0.04] border border-white/[0.08] p-6
-                            hover:border-white/[0.15] transition-all duration-300"
+                            className="group flex flex-col justify-between h-[160px] rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6 hover:border-white/[0.15] transition-all duration-300"
                         >
                             <ShieldCheck
                                 size={20}

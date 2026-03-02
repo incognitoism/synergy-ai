@@ -77,9 +77,7 @@ export default function Architecture() {
                                 className="relative text-center group"
                             >
                                 {/* Glowing circle */}
-                                <div className="relative mx-auto w-20 h-20 rounded-2xl bg-[#0d1526] border border-white/5 flex items-center justify-center 
-                                    group-hover:border-indigo-500/40 transition-all duration-500 
-                                    group-hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]">
+                                <div className="relative mx-auto w-20 h-20 rounded-2xl bg-[#0d1526] border border-white/5 flex items-center justify-center  group-hover:border-indigo-500/40 transition-all duration-500  group-hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]">
 
                                     {/* Pulsing glow */}
                                     <motion.div
