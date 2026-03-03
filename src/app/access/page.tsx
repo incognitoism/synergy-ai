@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import { RegisterLink, LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import {
     ArrowUpRight,
     Fingerprint,
@@ -9,6 +9,7 @@ import {
     BookOpen,
     ShieldCheck,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function AccessPage() {
     const fadeUp: Variants = {
@@ -34,10 +35,8 @@ export default function AccessPage() {
             {/* ================= LEFT PANE ================= */}
             <div className="relative w-full lg:w-[55%] flex flex-col justify-center px-10 lg:px-24 py-20 overflow-hidden border-b lg:border-b-0 lg:border-r border-white/[0.06] bg-[#030108]">
 
-                {/* Subtle grid */}
                 <div className="absolute inset-0 opacity-[0.04] pointer-events-none  bg-[linear-gradient(to_right,#4f46e51a_1px,transparent_1px), linear-gradient(to_bottom,#4f46e51a_1px,transparent_1px)] bg-[size:72px_72px]" />
 
-                {/* Ambient glow */}
                 <motion.div
                     animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -83,23 +82,16 @@ export default function AccessPage() {
             {/* ================= RIGHT PANE ================= */}
             <div className="relative w-full lg:w-[45%] flex flex-col justify-center px-8 md:px-14 py-20 overflow-hidden">
 
-                {/* Background Image (replace with your image) */}
                 <motion.div
                     animate={{ scale: [1.05, 1.08, 1.05] }}
                     transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                        backgroundImage: "url('/access.jpeg')",
-                    }}
+                    style={{ backgroundImage: "url('/access.jpeg')" }}
                 />
 
-                {/* Dark overlay */}
                 <div className="absolute inset-0 bg-[#0A0A0C]/85 backdrop-blur-[2px]" />
-
-                {/* Left blend gradient */}
                 <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#030108] to-transparent pointer-events-none" />
 
-                {/* Content */}
                 <motion.div
                     variants={staggerContainer}
                     initial="hidden"
@@ -114,10 +106,8 @@ export default function AccessPage() {
                         whileHover={{ y: -4 }}
                         transition={{ type: "spring", stiffness: 350, damping: 28 }}
                     >
-                        <Link
-                            href="/signin"
-                            className="group flex items-center justify-between gap-6 rounded-2xl bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-6 transition-all duration-300 hover:border-indigo-500/40 hover:shadow-[0_0_40px_rgba(79,70,229,0.08)]"
-                        >
+                        <LoginLink className="group flex items-center justify-between gap-6 rounded-2xl bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-6 transition-all duration-300 hover:border-indigo-500/40 hover:shadow-[0_0_40px_rgba(79,70,229,0.08)]">
+
                             <div className="flex items-center gap-5">
                                 <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 group-hover:bg-indigo-500/20 transition-all duration-300">
                                     <Fingerprint size={22} strokeWidth={1.5} />
@@ -137,7 +127,7 @@ export default function AccessPage() {
                                 strokeWidth={1.5}
                                 className="text-white/30 group-hover:text-indigo-400 transition-colors"
                             />
-                        </Link>
+                        </LoginLink>
                     </motion.div>
 
                     {/* NEW ENGAGEMENT */}
@@ -147,10 +137,8 @@ export default function AccessPage() {
                         whileHover={{ y: -4 }}
                         transition={{ type: "spring", stiffness: 350, damping: 28 }}
                     >
-                        <Link
-                            href="/signup"
-                            className="group flex items-center justify-between gap-6 rounded-2xl bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-6 transition-all duration-300 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(192,38,211,0.08)]"
-                        >
+                        <RegisterLink className="group flex items-center justify-between gap-6 rounded-2xl bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-6 transition-all duration-300 hover:border-purple-500/40 hover:shadow-[0_0_40px_rgba(192,38,211,0.08)]">
+
                             <div className="flex items-center gap-5">
                                 <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 group-hover:bg-purple-500/20 transition-all duration-300">
                                     <Network size={22} strokeWidth={1.5} />
@@ -170,7 +158,7 @@ export default function AccessPage() {
                                 strokeWidth={1.5}
                                 className="text-white/30 group-hover:text-purple-400 transition-colors"
                             />
-                        </Link>
+                        </RegisterLink>
                     </motion.div>
 
                     {/* DOCS */}
@@ -179,11 +167,7 @@ export default function AccessPage() {
                             href="/documentation"
                             className="group flex flex-col justify-between h-[160px] rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6 hover:border-white/[0.15] transition-all duration-300"
                         >
-                            <BookOpen
-                                size={20}
-                                strokeWidth={1.5}
-                                className="text-white/50 group-hover:text-white transition-colors"
-                            />
+                            <BookOpen size={20} strokeWidth={1.5} className="text-white/50 group-hover:text-white transition-colors" />
                             <div>
                                 <h4 className="text-lg font-medium text-white/90">
                                     Documentation
@@ -201,11 +185,7 @@ export default function AccessPage() {
                             href="/security"
                             className="group flex flex-col justify-between h-[160px] rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6 hover:border-white/[0.15] transition-all duration-300"
                         >
-                            <ShieldCheck
-                                size={20}
-                                strokeWidth={1.5}
-                                className="text-white/50 group-hover:text-white transition-colors"
-                            />
+                            <ShieldCheck size={20} strokeWidth={1.5} className="text-white/50 group-hover:text-white transition-colors" />
                             <div>
                                 <h4 className="text-lg font-medium text-white/90">
                                     Security Center
