@@ -68,7 +68,7 @@ export default function CompliancePage() {
             </section>
 
             {/* ================= STANDARDS GRID ================= */}
-            <section className="max-w-6xl mx-auto px-8 md:px-16 py-20">
+            <section className="max-w-6xl mx-auto px-8 md:px-16 py-0">
 
                 <motion.div
                     variants={stagger}

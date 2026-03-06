@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 
-export default function PrivacyPage() {
+export default function AccessibilityPage() {
     const fadeUp: Variants = {
         hidden: { opacity: 0, y: 18 },
         visible: {
@@ -25,10 +25,12 @@ export default function PrivacyPage() {
             {/* ================= HERO SECTION ================= */}
             <section className="relative border-b border-white/[0.06] overflow-hidden">
 
-                {/* Subtle grid (same as Access page) */}
-                <div className="absolute inset-0 opacity-[0.04] pointer-events-none  bg-[linear-gradient(to_right,#4f46e51a_1px,transparent_1px), linear-gradient(to_bottom,#4f46e51a_1px,transparent_1px)] bg-[size:72px_72px]" />
+                {/* Subtle grid background */}
+                <div className="absolute inset-0 opacity-[0.04] pointer-events-none 
+                bg-[linear-gradient(to_right,#4f46e51a_1px,transparent_1px),linear-gradient(to_bottom,#4f46e51a_1px,transparent_1px)] 
+                bg-[size:72px_72px]" />
 
-                <div className="relative max-w-5xl mx-auto px-8 md:px-16 py-28">
+                <div className="relative max-w-5xl mx-auto px-8 md:px-16 py-28 pb-[2px]">
 
                     <motion.div
                         variants={stagger}
@@ -47,21 +49,23 @@ export default function PrivacyPage() {
                             variants={fadeUp}
                             className="mt-6 pb-1 text-5xl md:text-6xl font-medium tracking-[-0.04em] leading-[0.95] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40"
                         >
-                            Privacy Policy
+                            Accessibility
                         </motion.h1>
 
                         <motion.p
                             variants={fadeUp}
                             className="mt-6 text-lg text-white/50 leading-relaxed"
                         >
-                            We design systems for clarity and control. That includes how your data is handled.
+                            We are committed to ensuring digital accessibility for all users,
+                            including individuals with disabilities. Our goal is to provide
+                            an inclusive and seamless experience across all platforms.
                         </motion.p>
                     </motion.div>
                 </div>
             </section>
 
             {/* ================= CONTENT SECTION ================= */}
-            <section className="max-w-4xl mx-auto px-8 md:px-16 py-0">
+            <section className="max-w-4xl mx-auto px-8 md:px-16 pt-20">
 
                 <motion.div
                     variants={stagger}
@@ -73,60 +77,64 @@ export default function PrivacyPage() {
                     {/* Section 1 */}
                     <motion.div variants={fadeUp}>
                         <h2 className="text-xl font-medium text-white/90 mb-4">
-                            1. Information We Collect
+                            1. Our Commitment
                         </h2>
                         <p className="text-white/50 leading-relaxed">
-                            We collect only the information necessary to provide and improve our services.
-                            This may include account credentials, usage logs, device metadata, and
-                            communication records related to support or onboarding.
+                            Synergy AI Solutions is dedicated to maintaining a website
+                            that is accessible and usable by the widest possible audience.
+                            We strive to meet recognized accessibility standards and
+                            continuously improve usability.
                         </p>
                     </motion.div>
 
                     {/* Section 2 */}
                     <motion.div variants={fadeUp}>
                         <h2 className="text-xl font-medium text-white/90 mb-4">
-                            2. How We Use Information
+                            2. Standards & Guidelines
                         </h2>
                         <p className="text-white/50 leading-relaxed">
-                            Collected data is used to operate infrastructure services, maintain
-                            system integrity, authenticate users, prevent abuse, and enhance
-                            deployment performance. We do not sell personal information.
+                            Our platform is designed with reference to the Web Content
+                            Accessibility Guidelines (WCAG) 2.1 Level AA standards.
+                            We regularly evaluate our digital properties to ensure
+                            compliance and enhancement opportunities.
                         </p>
                     </motion.div>
 
                     {/* Section 3 */}
                     <motion.div variants={fadeUp}>
                         <h2 className="text-xl font-medium text-white/90 mb-4">
-                            3. Security & Retention
+                            3. Accessibility Features
                         </h2>
                         <p className="text-white/50 leading-relaxed">
-                            We implement technical and organizational safeguards aligned with
-                            industry standards. Data is retained only as long as required for
-                            operational or legal purposes.
+                            Features include keyboard navigability, screen reader
+                            compatibility, scalable text, sufficient color contrast,
+                            semantic HTML structure, and responsive layouts
+                            across devices.
                         </p>
                     </motion.div>
 
                     {/* Section 4 */}
                     <motion.div variants={fadeUp}>
                         <h2 className="text-xl font-medium text-white/90 mb-4">
-                            4. Third-Party Services
+                            4. Ongoing Improvements
                         </h2>
                         <p className="text-white/50 leading-relaxed">
-                            Certain integrations may rely on trusted third-party providers
-                            (authentication, hosting, analytics). These providers operate
-                            under their own privacy frameworks.
+                            Accessibility is an ongoing effort. We conduct periodic
+                            reviews and integrate accessibility considerations into
+                            new feature development and system updates.
                         </p>
                     </motion.div>
 
                     {/* Section 5 */}
                     <motion.div variants={fadeUp}>
                         <h2 className="text-xl font-medium text-white/90 mb-4">
-                            5. Your Rights
+                            5. Feedback & Assistance
                         </h2>
                         <p className="text-white/50 leading-relaxed">
-                            Depending on your jurisdiction, you may request access, correction,
-                            or deletion of your data. For any privacy-related inquiries,
-                            contact us at privacy@synergy-ltd.com.
+                            If you encounter accessibility barriers or require
+                            assistance using our services, please contact us.
+                            We value feedback and are committed to addressing
+                            concerns promptly.
                         </p>
                     </motion.div>
 
