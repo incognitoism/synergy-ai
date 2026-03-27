@@ -4,10 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Synergy AI Solutions | AI Consulting & Business Automation",
+  title: "Synergy AI Solutions | Web Apps, AI & Automation for Startups",
   description:
-    "We help businesses automate workflows, integrate AI, and scale operations. From chatbots to full automation pipelines — we build intelligent systems that save you time and money.",
-  keywords: ["AI consulting", "business automation", "AI integration", "chatbot", "workflow automation"],
+    "We're a small studio that builds web apps, AI integrations, and automation for startups and growing businesses. Clean code, modern stack, real results.",
+  keywords: ["web development", "AI integration", "startup MVP", "automation", "web apps"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,20 +1,22 @@
 import Hero from "@/components/Hero";
-import LogoCarousel from "@/components/LogoCarousel";
+import Marquee from "@/components/Marquee";
 import Offerings from "@/components/Offerings";
-import AsphaltShowcase from "@/components/AsphaltShowcase";
-import SynergyCloud from "@/components/SynergyCloud";
-import Testimonials from "@/components/Testimonials";
+import RecentWork from "@/components/RecentWork";
+import AboutUs from "@/components/AboutUs";
+import HowWeWork from "@/components/HowWeWork";
+import OurStack from "@/components/OurStack";
 import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      {/* <LogoCarousel /> */}
+      <Marquee />
       <Offerings />
-      <AsphaltShowcase />
-      <SynergyCloud />
-      <Testimonials />
+      <RecentWork />
+      <AboutUs />
+      <HowWeWork />
+      <OurStack />
       <CTA />
     </>
   );

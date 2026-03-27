@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import AmbientGlow from "./AmbientGlow";
 
-const words = ["more sales", "faster growth", "loyal customers", "higher turnover", "real results"];
+const words = ["actually works", "saves you time", "your users love", "grows with you", "makes sense"];
 
 export default function Hero() {
     const [wordIndex, setWordIndex] = useState(0);
@@ -31,23 +31,26 @@ export default function Hero() {
                 }}
             />
 
-            {/* Content — upper 60% of viewport, clean space above the glow */}
+            {/* Content */}
             <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-28 pb-0 text-center">
 
-                {/* Category tag */}
+                {/* Availability status — real studios do this */}
                 <motion.div
                     initial={{ opacity: 0, y: -6 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
-                    className="mb-11"
+                    className="mb-8"
                 >
-                    <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.07] bg-white/[0.03] text-[10.5px] tracking-[0.22em] uppercase text-white/30 font-medium">
-                        <span className="w-1 h-1 rounded-full bg-violet-400/60 inline-block" />
-                        Revenue operations · MSMEs
+                    <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/[0.07] bg-white/[0.03] text-[11px] tracking-[0.08em] text-white/35 font-medium">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                        </span>
+                        Available for new projects
                     </span>
                 </motion.div>
 
-                {/* Headline — tight, vertical rhythm is everything */}
+                {/* Headline */}
                 <motion.h1
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -55,8 +58,8 @@ export default function Hero() {
                     className="font-semibold tracking-[-0.045em] leading-[0.95] max-w-4xl"
                     style={{ fontSize: "clamp(48px, 8.5vw, 92px)" }}
                 >
-                    <span className="block text-white/95">Your business,</span>
-                    <span className="block text-white/30 mt-1.5">engineered for</span>
+                    <span className="block text-white/95">We build software</span>
+                    <span className="block text-white/30 mt-1.5">that</span>
                     <span className="relative block mt-2.5 min-h-[1.1em]">
                         <AnimatePresence mode="wait">
                             <motion.span
@@ -73,7 +76,7 @@ export default function Hero() {
                     </span>
                 </motion.h1>
 
-                {/* Sub copy — two distinct tiers, no paragraph */}
+                {/* Sub copy */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -81,17 +84,16 @@ export default function Hero() {
                     className="mt-11 space-y-3"
                 >
                     <p
-                        className="font-light leading-[1.45] tracking-[-0.005em] mx-auto"
+                        className="font-light leading-[1.55] tracking-[-0.005em] mx-auto"
                         style={{
                             fontSize: "clamp(15px, 1.8vw, 19px)",
-                            maxWidth: "500px",
+                            maxWidth: "540px",
                             color: "rgba(255,255,255,0.52)",
                         }}
                     >
-                        More customers handled.{" "}
-                        <span style={{ color: "rgba(255,255,255,0.88)" }}>More revenue closed.</span>
-                        <br />
-                        No extra staff. No extra overhead.
+                        We&apos;re a small team that builds web apps, internal tools, and AI integrations
+                        for startups and growing businesses.{" "}
+                        <span style={{ color: "rgba(255,255,255,0.82)" }}>No fluff. Just good software.</span>
                     </p>
                 </motion.div>
 
@@ -106,45 +108,40 @@ export default function Hero() {
                         href="/book"
                         className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black text-[12.5px] font-semibold tracking-[0.04em] uppercase hover:bg-white/92 transition-all duration-200 hover:scale-[1.015] active:scale-[0.985]"
                     >
-                        Start growing
+                        Book a free call
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
                     </Link>
                     <Link
                         href="/services"
                         className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-[12.5px] tracking-[0.04em] uppercase font-medium text-white/35 border border-white/[0.07] hover:text-white/60 hover:border-white/15 transition-all duration-200"
                     >
-                        See how it works
+                        See what we do
                     </Link>
                 </motion.div>
 
-                {/* Proof strip — flush at bottom of content, above the glow */}
+                {/* Floating mini terminal — feels handcrafted */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1.2 }}
-                    className="mt-20 mb-0 flex items-center justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.6, duration: 1 }}
+                    className="mt-16 w-full max-w-md mx-auto"
                 >
-                    <div className="flex items-center gap-7">
-                        {[
-                            { n: "3×", label: "response speed" },
-                            { n: "40%", label: "fewer drop-offs" },
-                            { n: "0", label: "extra hires" },
-                        ].map((stat, i) => (
-                            <div key={stat.label} className="flex items-center gap-7">
-                                {i > 0 && <div className="w-px h-6 bg-white/[0.07]" />}
-                                <div className="text-center">
-                                    <div
-                                        className="font-semibold tracking-tight bg-gradient-to-b from-white/70 to-white/30 bg-clip-text text-transparent"
-                                        style={{ fontSize: "clamp(20px, 2.5vw, 28px)" }}
-                                    >
-                                        {stat.n}
-                                    </div>
-                                    <div className="text-[10px] text-white/20 tracking-[0.18em] uppercase mt-0.5 font-light">
-                                        {stat.label}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="rounded-xl border border-white/[0.06] bg-[#0c0c14]/80 backdrop-blur-sm overflow-hidden">
+                        {/* Terminal header */}
+                        <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/[0.04]">
+                            <div className="w-2 h-2 rounded-full bg-white/[0.08]" />
+                            <div className="w-2 h-2 rounded-full bg-white/[0.08]" />
+                            <div className="w-2 h-2 rounded-full bg-white/[0.08]" />
+                            <span className="ml-2 text-[10px] text-slate-600 font-mono">~/synergy/current-project</span>
+                        </div>
+                        {/* Terminal content */}
+                        <div className="px-4 py-3 font-mono text-[12px] leading-[1.8] text-slate-500">
+                            <div><span className="text-emerald-500/60">$</span> <span className="text-slate-400">npm run build</span></div>
+                            <div className="text-slate-600">✓ Compiled successfully</div>
+                            <div className="text-slate-600">✓ 47 pages generated</div>
+                            <div className="text-slate-600">✓ Deployed to production</div>
+                            <div className="mt-1"><span className="text-emerald-500/60">$</span> <span className="text-slate-500 animate-pulse">_</span></div>
+                        </div>
                     </div>
                 </motion.div>
 

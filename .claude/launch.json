@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "/Users/xqcultima/.nvm/versions/node/v22.19.0/bin/node",
+      "runtimeArgs": ["/Users/xqcultima/synergy-ai/node_modules/.bin/next", "dev"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}
